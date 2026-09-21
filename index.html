@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:skyblue;
+            text-align: center;
+        }
+        textarea{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            height: 550px;
+            width: 550px;
+            background-color: whitesmoke;
+            border: solid 3px rgb(12, 11, 11);
+            box-shadow:0 2px 30px  rgba(24, 23, 23, 0.945);
+            border-radius: 10px;
+        }
+        h1{
+            margin:40px;
+            color: rgb(64, 112, 112);
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h3{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="count">
+    <h1>Count Your Characters</h1>
+    <textarea id="message" placeholder="Start Typing Here👇🏻..........."></textarea>
+    <h3 id="error"></h3>
+    </div>
+    <h2 id="number">Character Count:</h4>
+    <h2 id="balance">Remaining Character:</h5>
+    
+    <script>
+        let message=document.getElementById("message")
+        let number=document.getElementById("number")
+        let balance=document.getElementById("balance")
+        let error=document.getElementById("error")
+        let count=document.getElementsByClassName("count")
+       message.style.fontSize="23px"
+        message.addEventListener("input",function(){
+            number.textContent="Character Count:"+message.value.length
+            balance.textContent="Remaining:"+((message.value.length)-100)
+            if((message.value.length)>100){
+                error.textContent="⚠️Warning❗:maximum 100 characters only"
+                error.style.color="red"
+                error.style.fontSize="29px"
+                message.style.color="red"
+            }
+            else{
+                error.textContent="✅"
+                error.style.fontSize="25px"
+                message.style.color="black"
+                
+            }
+            
+        })
+    </script>
+</body>
+</html>
