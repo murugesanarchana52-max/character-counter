@@ -11,7 +11,7 @@
         }
         textarea{
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            height:350px;
+            height:320px;
             width:650px;
             background-color: whitesmoke;
             border: solid 3px rgb(12, 11, 11);
@@ -46,7 +46,7 @@
        message.style.fontSize="23px"
         message.addEventListener("input",function(){
             number.textContent="Character Count:"+message.value.length
-            balance.textContent="Remaining:"+((message.value.length)-100)
+            balance.textContent="Remaining Characters:"+((message.value.length)-100)
             if((message.value.length)>100){
                 error.textContent="⚠️Warning❗:maximum 100 characters only"
                 error.style.color="red"
